@@ -7,10 +7,10 @@ class Database():
 
     def set_value(self, key, val):
         """
-
-        :param key:
-        :param val:
-        :return:
+        sets a new value in the dictionary
+        :param: key the key of the dictionary
+        :param: val value to put in the dictionary
+        :return: True if the value added to dictionary and false if not
         """
         self.dict[key] = val
         if key in self.dict.keys():
@@ -19,19 +19,27 @@ class Database():
             return False
 
     def get_value(self, key):
-        return self.dict.get(key)
+        """
+        returns the value in the dictionary
+        :param: key the key of the dictionary
+        :return: the value of the key
+        """
+        if key in self.dict.keys():
+            return self.dict.get(key)
+        else:
+            return None
 
     def delete_value(self, key):
+        """
+        deletes the value of the key
+        :param key: the key of the dictionary
+        :return: the value that was deleted
+        """
         if key in self.dict.keys():
             value = self.get_value(key)
             del self.dict[key]
             return value
         else:
-            raise KeyError("key does not exist")
+            return None
 
 
-db = Database()
-db.set_value("a", "b")
-print(db.dict)
-print(db.get_value("a"))
-print(db.dict)
