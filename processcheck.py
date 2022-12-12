@@ -36,6 +36,8 @@ def main():
     logging.basicConfig(filename='logprocess.txt', level=logging.DEBUG,
                         format='%(asctime)s %(levelname)s %(threadName)s %(message)s')
     db = Syncdb(Filedb(), False)
+    for i in range(200, 300):
+        db.set_value(i, i)
     logging.debug("no competition")
     writer(db, 0)
     reader(db)
@@ -53,6 +55,8 @@ def main():
         process1.start()
     for i in all_processes:
         i.join()
+    for i in range(200, 300):
+        assert db.get_value(i) == i
 
 
 if __name__ == "__main__":
