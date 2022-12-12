@@ -8,6 +8,8 @@ class Filedb(Database):
         initializer
         """
         super().__init__()
+        with open("dbfile.txt", "wb"):
+            pass
 
     def dump(self):
         """

@@ -27,7 +27,7 @@ def reader(db):
     """
     logging.debug("reader joined")
     for i in range(100):
-        flag = db.get_value(i) == i or db.get_value(i) is None
+        flag = db.get_value(i) is None or db.get_value(i) == i
         assert flag
     logging.debug("reader left")
 
