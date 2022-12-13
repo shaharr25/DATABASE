@@ -9,7 +9,7 @@ class Syncdb:
         """
         initializer
         :param database: dictionary
-        :param thread_or_process: true if thread and false if proces
+        :param thread_or_process: true if thread and false if process
         """
         if not isinstance(database, Filedb):
             raise ValueError("not filedb instance")
