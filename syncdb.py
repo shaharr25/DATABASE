@@ -4,7 +4,7 @@ from filedb import Filedb
 import logging
 
 
-class Syncdb():
+class Syncdb:
     def __init__(self, database: Filedb, thread_or_process):
         """
         initializer
